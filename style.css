@@ -1,0 +1,271 @@
+/* --- 1. DESIGN TOKENS / PALET WARNA --- */ :root {
+  --primary-color: #FFD700;     /* Warm Gold */   
+  --secondary-color: #FF69B4;   /* Pink Hot */   
+  --dark-text: #D2691E;   
+  --muted-text: #000000 ;   
+  --bg-color: #FFFFF0;   
+  --surface-color: #FFFACD;   
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);   
+  --radius-lg: 16px;   
+  --radius-sm: 8px; 
+}  
+
+/* --- 2. BASE STYLES --- */ 
+* {   
+  box-sizing: border-box;   
+  margin: 0;   
+  padding: 0; 
+}  
+
+
+body {   
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);   
+  color: var(--dark-text);   
+  line-height: 1.5;   
+  padding: 30px 15px; 
+}  
+
+
+.menu-container {   
+  max-width: 960px;   
+  margin: 0 auto; 
+}  
+
+/* --- 3. HEADER --- */ 
+.header {   
+  text-align: center;   
+  margin-bottom: 24px; 
+}  
+
+.brand-logo {   
+  display: inline-flex;   
+  align-items: center;   
+  gap: 10px; 
+}  
+
+.logo-icon {   
+  font-size: 2rem; 
+}  
+
+.header h1 {   
+  font-family: 'Poppins', sans-serif;   
+  font-size: 2.2rem;   
+  color: var(--dark-text); 
+}  
+
+.header h1 strong {   
+  color: var(--primary-color); 
+}  
+
+.tagline {   
+  color: var(--muted-text);   
+  font-size: 0.95rem;   
+  margin-top: 4px; 
+} 
+
+/* --- 4. HERO BANNER VIDEO YOUTUBE (RESPONSIVE 16:9) --- */ 
+.banner-video-wrapper {   
+  border-radius: var(--radius-lg);   
+  overflow: hidden;   
+  margin-bottom: 30px;   
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); 
+}  
+
+.video-container {
+  position: relative;   
+  width: 100%;   
+  padding-bottom: 56.25%; /* Rasio Aspek 16:9 */   height: 0;   
+  overflow: hidden;   
+  background-color: #000; 
+}  
+
+.video-container iframe {   
+  position: absolute;   
+  top: 0;   
+  left: 0;   
+  width: 100%;   
+  height: 100%;
+  border: 0; 
+}  
+
+/* --- 5. CATEGORY FILTER --- */ 
+.category-filter {   
+  display: flex;   
+  justify-content: center;  
+  gap: 10px;   
+  margin-bottom: 36px;   
+  flex-wrap: wrap;
+}  
+
+.filter-btn {
+  background: #FFFFFF;  
+  border: 1.5px solid #FFC0CB;   
+  padding: 8px 20px;   
+  border-radius: 30px;   
+  font-weight: 600;   
+  font-size: 0.85rem;   
+  color: var(--muted-text);   
+  cursor: pointer;   
+  transition: all 0.2s ease; 
+}  
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--primary-color);   
+  color: #FFFFFF;  
+  border-color: var(--primary-color);  
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.2);
+}  
+
+/* --- 6. MENU SECTIONS & GRID --- */ 
+.menu-section {   
+  margin-bottom: 40px; 
+}  
+
+.section-title {   
+  font-family: 'Poppins', sans-serif;   
+  font-size: 1.3rem;   
+  margin-bottom: 20px;   
+  display: flex;   
+  align-items: center;   
+  gap: 8px;   
+  border-bottom: 2px solid #EEEEEE;   
+  padding-bottom: 8px; 
+}  
+
+.menu-grid {   
+  display: grid;   
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));   
+  gap: 24px; 
+}  
+
+/* --- 7. MENU CARD (KHUSUS FOTO PRODUK) --- */ 
+.menu-card {  
+  background: var(--surface-color);   
+  border-radius: var(--radius-lg);   
+  overflow: hidden;   
+  box-shadow: var(--card-shadow);   
+  border: 1px solid #F0F0F0;   
+  display: flex;   
+  flex-direction: column;  
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}  
+
+.menu-card:hover {   
+  transform: translateY(-4px);  
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1); 
+}  
+
+.card-img-wrapper {  
+  position: relative;   
+  width: 100%;   
+  height: 180px;   
+  overflow: hidden; 
+}
+
+.card-img-wrapper img {   
+  width: 100%;   
+  height: 100%;  
+  object-fit: cover;   
+  display: block; 
+}  
+
+.badge-tag {   
+  position: absolute;   
+  top: 12px;   
+  right: 12px;   
+  background: var(--primary-color);
+  color: #FFF;  
+  font-size: 0.7rem;  
+  font-weight: 700;   
+  padding: 4px 10px;  
+  border-radius: 20px;  
+  z-index: 2; 
+}  
+
+.badge-tag.green { background: var(--secondary-color); } 
+.badge-tag.red { background: #D32F2F; }
+
+/* Card Content Body */ 
+.card-body {   
+  padding: 20px;   
+  display: flex;   
+  flex-direction: column;   
+  flex: 1; 
+}  
+
+.card-header {   
+  display: flex;   
+  justify-content: space-between;   
+  align-items: flex-start;   
+  gap: 8px;   
+  margin-bottom: 8px; 
+}  
+
+.card-header h3 {   
+  font-family: 'Poppins', sans-serif;   
+  font-size: 1.05rem;   
+  color: var(--dark-text);   
+  line-height: 1.3; 
+}  
+
+.price {
+  font-family: 'Poppins', sans-serif;   
+  font-weight: 700;   
+  color: var(--primary-color);   
+  font-size: 1rem;   
+  white-space: nowrap; 
+}  
+
+.description {  
+  font-size: 0.825rem;   
+  color: var(--muted-text);  
+  margin-bottom: 16px;  
+  flex: 1; 
+}
+
+.card-footer {   
+  display: flex;   
+  justify-content: space-between;  
+  align-items: center;   
+  border-top: 1px dashed #E0E0E0;   
+  padding-top: 12px; 
+}  
+
+.rating {  
+  font-size: 0.75rem;   
+  font-weight: 600;   
+  color: #FFA000; 
+}
+
+.btn-order {  
+  background: #25D366;  
+  color: #FFFFFF;   
+  text-decoration: none;   
+  font-size: 0.8rem;   
+  font-weight: 700;   
+  padding: 6px 16px;   
+  border-radius: var(--radius-sm);   
+  transition: background 0.2s ease; 
+}  
+
+.btn-order:hover {   
+  background: #1EBE5D; 
+}  
+
+/* --- 8. FOOTER --- */ 
+.footer {   
+  text-align: center;   
+  margin-top: 40px;  
+  padding-top: 20px;  
+  border-top: 1px solid #E0E0E0;   
+  color: var(--muted-text);   
+  font-size: 0.85rem; 
+}  
+
+.footer small {   
+  display: block;   
+  margin-top: 6px;   
+  font-size: 0.75rem;   
+  color: #90A4AE; 
+} 
